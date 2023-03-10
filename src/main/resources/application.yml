@@ -24,7 +24,6 @@ spring:
     date-format: "yyyy-MM-dd HH:mm:ss" 
     
     
-    
 # Common Database Settings
   sql:
     init:
