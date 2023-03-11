@@ -25,8 +25,8 @@ spring:
     
  # Email Settings
   mail:
-    username: obsidi.academy@gmail.com
-    password: emiyerxmzsipfnpl
+    username: gmail id
+    password: 2fa password
     host: smtp.gmail.com
     port: 587
     protocol: smtp
