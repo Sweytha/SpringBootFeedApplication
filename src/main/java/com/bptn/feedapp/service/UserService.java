@@ -17,6 +17,9 @@ public class UserService {
 	@Autowired
 	UserRepository userRepository;
 	
+	@Autowired
+	EmailService emailService;
+	
 	
 	public List<User> listUsers() {
 		
@@ -41,6 +44,8 @@ public class UserService {
 		user.setEmailId(user.getEmailId().toLowerCase());
 		user.setEmailVerified(false);
 		user.setCreatedOn(Timestamp.from(Instant.now()));
+		
+		this.emailService.sendVerificationEmail(user);
 		
 		this.userRepository.save(user);
 		return user;

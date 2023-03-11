@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bptn.feedapp.jdbc.UserBean;
+
 import com.bptn.feedapp.jpa.User;
 import com.bptn.feedapp.service.UserService;
 
@@ -79,6 +79,14 @@ public class UserController {
 	
 
 }
+	
+	@PostMapping("/signup")
+	public User signup(@RequestBody User user) {	
+		logger.debug("Signing up, username: {}", user.getUsername());
+		
+		return this.userService.signup(user);
+		
+	}
 	
 	
 	
